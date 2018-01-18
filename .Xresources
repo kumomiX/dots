@@ -1,0 +1,84 @@
+!
+!/\ \ /\ \
+!\ `\`\/'/'  _ __   __    ____   ___   __  __  _ __  ___     __    ____
+! `\/ > <   /\`'__/'__`\ /',__\ / __`\/\ \/\ \/\`'__/'___\ /'__`\ /',__\
+!    \/'/\`\\ \ \/\  __//\__, `/\ \L\ \ \ \_\ \ \ \/\ \__//\  __//\__, `\
+!    /\_\\ \_\ \_\ \____\/\____\ \____/\ \____/\ \_\ \____\ \____\/\____/
+!    \/_/ \/_/\/_/\/____/\/___/ \/___/  \/___/  \/_/\/____/\/____/\/___/
+!
+URxvt*font:     xft:gohu gohufont:pixelsize=14
+URxvt*boldFont: xft:gohu gohufont:pixelsize=14
+
+! special
+*.foreground:   #ffffff
+*.background:   #0a1015
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #0a1015
+*.color8:       #ddbbbb
+
+! red
+*.color1:       #bbccaa
+*.color9:       #bbccaa
+
+! green
+*.color2:       #f5f2b3
+*.color10:      #f5f2b3
+
+! yellow
+*.color3:       #ad2e3e
+*.color11:      #ad2e3e
+
+! blue
+*.color4:       #b8d7e0
+*.color12:      #b8d7e0
+
+! magenta
+*.color5:       #ddbbbb
+*.color13:      #ddbbbb
+
+! cyan
+*.color6:       #ff95aa
+*.color14:      #ff95aa
+
+! white
+*.color7:       #ad2e3e
+*.color15:      #ebe1d9
+!URxvt SETTINGS
+!URxvt*dynamicColors: on
+URxvt.internalBorder: 30
+URxvt*lineSpace: 2
+URxvt*scrollBar: false
+URxvt.geometry: 80x18
+URxvt*saveLines: 1000
+URxvt*cursorUnderline: false
+URxvt*cursorBlink: true
+
+!URxvt plugins
+URxvt*perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: default,matcher,keyboard-select
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+!! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #0e181a, #0e181a, #0e181a
+rofi.color-normal: #0e181a, #ffffff, #0e181a, #0e181a, #b23450
+rofi.color-active: #0e181a, #b23450, #0e181a, #0e181a, #b23450
+rofi.color-urgent: #0e181a, #ffc715, #0e181a, #0e181a, #ffc715
+rofi.width: 1580
+rofi.lines: 1
+rofi.columns: 5
+rofi.font: gohu gohufont 11
+rofi.bw: 0
+rofi.padding: 11
+rofi.eh: 1
+rofi.hide-scrollbar: true
+rofi.xoffset: 50
+rofi.yoffset: 0
+rofi.location: 7

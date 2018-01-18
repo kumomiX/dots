@@ -1,0 +1,38 @@
+[options]
+hide-info-box=true
+end-of-files-action=wrap-no-reshuffle
+set_cursor_auto_hide(1)
+
+[keybindings]
+
+#navigation
+g { goto_file_byindex(0); }
+G { goto_file_byindex(-1); }
+h { goto_file_relative(-1); }
+[ { goto_file_relative(10); }
+] { goto_file_relative(-10); }
+l { goto_file_relative(1); }
+
+#pan
+H { shift_x(20); }
+J { shift_y(-50); }
+K { shift_y(50); }
+L { shift_x(-20); }
+
+#zoom
+j { set_scale_level_relative(0.8); }
+k { set_scale_level_relative(1.2); }
+
+z { set_interpolation_quality(0); }
+
+#flippin'
+s { flip_horizontally(); }
+a { rotate_left(); }
+d { rotate_right(); }
+
+#filters
+cg { command(|convert - -colorspace Gray -); }
+
+# animation
+, { animation_set_speed_relative(0.9); }
+. { animation_set_speed_relative(1.1); }
