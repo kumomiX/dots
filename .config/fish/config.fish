@@ -6,6 +6,10 @@ function sudo
     end
 end
 
+set focus_color (xrdb -query | grep 'color7' | cut -f2)
+set bg_color (xrdb -query | grep 'background' | cut -f2)
+set fg_color (xrdb -query | grep 'foreground' | cut -f2)
+
 alias install="sudo pacman -S"
 alias uninstall="sudo pacman -Rns"
 alias music="ncmpcpp"

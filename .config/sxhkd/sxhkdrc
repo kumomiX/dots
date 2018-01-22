@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 #
 # wm independent hotkeys
 #
@@ -7,10 +7,11 @@
 super + Return
   urxvtc
 
-#!/usr/bin/env sh
 # program launcher
 super + d
-  rofi -show run
+  dmenu_run -fn 'gohu gohufont-14' -sb $focus_color -sf $fg_color -nf $fg_color -nb $bg_color
+  #rofi -show run
+
 
 # make sxhkd reload its configuration files:
 super + Escape

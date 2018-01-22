@@ -27,8 +27,10 @@
 !/.config/beets/config.yaml
 
 !.Xresources
+!.xinit
 !/.vim/
 !.vimrc
 !/.urxvt/
 !.pqivrc
 
+!MoscowSans.ttf

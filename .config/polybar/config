@@ -61,39 +61,29 @@ font-4 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1:size10;1
 
 modules-center = bspwm
 
-;[module/xwindow]
-;type   = internal/xwindow
-;format =  <label>
-;label  = %title:%
-;format-padding = 3
 
 label-foreground = ${xrdb:foreground}
 format-background = ${xrdb:background}
 
-
-;[module/xkeyboard]
-;type        = internal/xkeyboard
-;blacklist-0 = num lock
-;
-;format = <label-indicator>
-;label-indicator-padding    = 2
-;label-indicator-margin     = 1
 
 [module/bspwm]
 type = internal/bspwm
 
 label-focused = 
 label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.bwhite}
 label-focused-padding = 1
 
-label-occupied = 
+label-occupied =
+label-occupied-foreground = ${colors.bwhite}
 label-occupied-padding = 1
 
-label-urgent = 
-label-urgent-background = ${colors.background}
-label-urgent-padding = 1
+;label-urgent =
+;label-urgent-background = ${colors.background}
+;label-urgent-padding = 1
 
 label-empty = 
+;
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 1
 

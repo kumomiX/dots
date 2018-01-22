@@ -24,6 +24,7 @@ call plug#end()
 
 filetype on
 syntax on
+set clipboard=unnamedplus
 set showmatch
 set hidden
 set history=100
