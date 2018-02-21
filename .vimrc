@@ -5,16 +5,16 @@
 " \ \___/ \ \_\ \_\ \_\ \_\ \_\ \____\
 "  \/__/   \/_/\/_/\/_/\/_/\/_/\/____/
 "
-
 call plug#begin('~/.vim/bundle')
 Plug 'mhinz/vim-startify'
 Plug 'keith/investigate.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'mattn/emmet-vim',           { 'for': ['html','xhtml','css','sass','scss','less','javascript','javascript.jsx'] }
 Plug 'w0rp/ale'
-Plug 'Yggdroot/indentLine'
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
+"Plug 'Yggdroot/indentLine'
+Plug 'tomtom/tlib_vim'
+Plug 'marcweber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'francoiscabrol/ranger.vim'
@@ -24,6 +24,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'mxw/vim-jsx'
 Plug 'dylanaraps/wal.vim'
 Plug 'styled-components/vim-styled-components'
+Plug 'ddrscott/vim-side-search'
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 filetype on
@@ -143,7 +145,8 @@ nnoremap <F8> :!node "%"<CR>
 noremap <silent> <C-S> :update<CR>
 
 "snippets
-let g:UltiSnipsUsePythonVersion = 3
+"let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsExpandTrigger="<tab>"
 
 "ranger remaps
 let g:ranger_map_keys = 0
@@ -154,3 +157,19 @@ map <leader>r :Ranger<CR>
 
 "CtrlP
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+" SideSearch current word and return to original window
+nnoremap <Leader>s :SideSearch <C-r><C-w><CR> | wincmd p
+
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END

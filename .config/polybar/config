@@ -15,7 +15,8 @@
 [colors]
 transparent = #00000000
 foreground  = ${xrdb:color7}
-background  = ${xrdb:color0}
+#background  = ${xrdb:color0}
+background  = #aaffffff
 urgent-bg = #9575cd
 inactive-text = #676e7d
 
@@ -55,7 +56,7 @@ border-right-size = 0
 border-color = ${colors.background}
 
 font-0 = lucy tewi:size=10;1
-font-1 = WunconSiji:size=10;1
+font-1 = Siji:size=10;1
 font-3 = siji:size=10;1
 font-4 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1:size10;1
 
@@ -99,8 +100,8 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 separator = 
-font-0 = GohuFont:size=10;1
-font-1 = WunconSiji:size=10;1
+font-0 = ProFont:size=11;1
+font-1 = Siji:size=10;1
 font-3 = siji:size=10;1
 font-4 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1:size10;1
 
@@ -133,7 +134,7 @@ foreground = ${colors.foreground}
 
 separator = 
 
-font-0 = GohuFont:size=10;1
+font-0 = ProFont:size=11;1
 font-1 = siji:size=10;1
 font-2 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1:size10;1
 

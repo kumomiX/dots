@@ -16,6 +16,7 @@ bspc monitor -d I II III IV V VI
 . "${HOME}/.cache/wal/colors.sh"
 
 # Looks
+bspc config initial_polarity second_child
 bspc config focus_follows_pointer true
 bspc config border_width        5
 bspc config window_gap 50
@@ -52,8 +53,8 @@ bspc rule -a mpv:dnc state=pseudo_tiled desktop=^2
 bspc rule -a URxvt:music state=pseudo_tiled desktop=^2
 
 # AutoStart
-wal -a 95 -i /home/kumomi/pics/walls/1428615705636.jpg
-#mpd .config/mpd/mpd.conf
+wal -a 90 -l -g -i /home/kumomi/pics/walls/dusa.png
+mpd .config/mpd/mpd.conf
 chromium &
 #urxvtc -name music -e ncmpcpp &
 #mpv -name dnc --ao=null /media/windows/cloud/pics/girls/dance/15133657204850.webm &

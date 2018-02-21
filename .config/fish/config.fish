@@ -11,6 +11,7 @@ alias xi="sudo xbps-install -S"
 alias xr="sudo xbps-remove"
 
 alias shell="r ~/.config/fish/"
+alias bspwmrc="vim ~/.config/bspwm/bspwmrc"
 
 alias v="vim"
 alias r="ranger"
