@@ -1,0 +1,69 @@
+!
+!/\ \ /\ \
+!\ `\`\/'/'  _ __   __    ____   ___   __  __  _ __  ___     __    ____
+! `\/ > <   /\`'__/'__`\ /',__\ / __`\/\ \/\ \/\`'__/'___\ /'__`\ /',__\
+!    \/'/\`\\ \ \/\  __//\__, `/\ \L\ \ \ \_\ \ \ \/\ \__//\  __//\__, `\
+!    /\_\\ \_\ \_\ \____\/\____\ \____/\ \____/\ \_\ \____\ \____\/\____/
+!    \/_/ \/_/\/_/\/____/\/___/ \/___/  \/___/  \/_/\/____/\/____/\/___/
+!
+URxvt*font:     xft:Gohufont:pixelsize=14
+URxvt*boldFont: xft:Gohufont:pixelsize=14
+
+! special
+*.foreground:   #ffffff
+*.background:   #000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #0a1015
+*.color8:       #ddbbbb
+
+! red
+*.color1:       #bbccaa
+*.color9:       #bbccaa
+
+! green
+*.color2:       #f5f2b3
+*.color10:      #f5f2b3
+
+! yellow
+*.color3:       #ad2e3e
+*.color11:      #ad2e3e
+
+! blue
+*.color4:       #b8d7e0
+*.color12:      #b8d7e0
+
+! magenta
+*.color5:       #ddbbbb
+*.color13:      #ddbbbb
+
+! cyan
+*.color6:       #ff95aa
+*.color14:      #ff95aa
+
+! white
+*.color7:       #ad2e3e
+*.color15:      #ebe1d9
+!URxvt SETTINGS
+!URxvt*dynamicColors: on
+URxvt.internalBorder: 30
+URxvt*lineSpace: 2
+URxvt*scrollBar: false
+URxvt.geometry: 80x18
+URxvt*saveLines: 1000
+URxvt*cursorUnderline: false
+URxvt*cursorBlink: true
+!URxvt*tintColor: S_base03
+!URxvt.transparent:   true
+!URxvt.shading:       15
+
+
+!URxvt plugins
+URxvt*perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: default,matcher,keyboard-select
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.keysym.M-Escape: perl:keyboard-select:activate

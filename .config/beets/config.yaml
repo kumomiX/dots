@@ -1,0 +1,23 @@
+directory: ~/testing
+library: ~/.config/beets/musiclibrary.db
+plugins: chroma discogs fromfilename fetchart embedart lastgenre
+
+acoustid:
+  apikey: wmjtgPSDwi
+
+match:
+  strong_rec_thresh: 0.2
+
+fetchart:
+  google_key: AIzaSyBg8ng5ViN2xaPZjt7y6rjCXZXLLuiF8RA
+  sources: amazon coverart itunes google
+
+lastgenre:
+  source: artist
+  fallback: 'Unknown'
+  whitelist: ~/.config/beets/whitelist.txt
+
+paths:
+  default: %lower{$genre}/%asciify{$artist} - %asciify{$title}
+  singleton: %lower{$genre}/%asciify{$artist} - %asciify{$title}
+  comp: %lower{$genre}/%asciify{$artist} - %asciify{$title}

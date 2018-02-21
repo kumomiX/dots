@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/kumomi/ytfront'
+let g:netrw_dirhist_2='/home/kumomi/ytfront/src'
+let g:netrw_dirhist_3='/home/kumomi/ytfront/src/actions'
+let g:netrw_dirhist_4='/home/kumomi/ytfront/src'
+let g:netrw_dirhist_5='/home/kumomi/ytfront/src/StyledComponents'
+let g:netrw_dirhist_6='/home/kumomi/ytfront/public'
