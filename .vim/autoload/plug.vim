@@ -605,7 +605,11 @@ function! plug#helptags()
     return s:err('plug#begin was not called')
   endif
   for spec in values(g:plugs)
+<<<<<<< HEAD
     let docd = join([s:rtp(spec), 'doc'], '/')
+=======
+    let docd = join([spec.dir, 'doc'], '/')
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
     if isdirectory(docd)
       silent! execute 'helptags' s:esc(docd)
     endif
@@ -782,10 +786,15 @@ function! s:assign_name()
 endfunction
 
 function! s:chsh(swap)
+<<<<<<< HEAD
   let prev = [&shell, &shellcmdflag, &shellredir]
   if s:is_win
     set shell=cmd.exe shellcmdflag=/c shellredir=>%s\ 2>&1
   elseif a:swap
+=======
+  let prev = [&shell, &shellredir]
+  if !s:is_win && a:swap
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
     set shell=sh shellredir=>%s\ 2>&1
   endif
   return prev
@@ -793,6 +802,7 @@ endfunction
 
 function! s:bang(cmd, ...)
   try
+<<<<<<< HEAD
     let [sh, shellcmdflag, shrd] = s:chsh(a:0)
     " FIXME: Escaping is incomplete. We could use shellescape with eval,
     "        but it won't work on Windows.
@@ -810,6 +820,17 @@ function! s:bang(cmd, ...)
     if s:is_win
       call delete(batchfile)
     endif
+=======
+    let [sh, shrd] = s:chsh(a:0)
+    " FIXME: Escaping is incomplete. We could use shellescape with eval,
+    "        but it won't work on Windows.
+    let cmd = a:0 ? s:with_cd(a:cmd, a:1) : a:cmd
+    let g:_plug_bang = '!'.escape(cmd, '#!%')
+    execute "normal! :execute g:_plug_bang\<cr>\<cr>"
+  finally
+    unlet g:_plug_bang
+    let [&shell, &shellredir] = [sh, shrd]
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
   endtry
   return v:shell_error ? 'Exit status: ' . v:shell_error : ''
 endfunction
@@ -1191,6 +1212,7 @@ endfunction
 
 function! s:spawn(name, cmd, opts)
   let job = { 'name': a:name, 'running': 1, 'error': 0, 'lines': [''],
+<<<<<<< HEAD
             \ 'batchfile': (s:is_win && (s:nvim || s:vim8)) ? tempname().'.bat' : '',
             \ 'new': get(a:opts, 'new', 0) }
   let s:jobs[a:name] = job
@@ -1200,6 +1222,12 @@ function! s:spawn(name, cmd, opts)
     let cmd = job.batchfile
   endif
   let argv = add(s:is_win ? ['cmd', '/c'] : ['sh', '-c'], cmd)
+=======
+            \ 'new': get(a:opts, 'new', 0) }
+  let s:jobs[a:name] = job
+  let argv = add(s:is_win ? ['cmd', '/c'] : ['sh', '-c'],
+               \ has_key(a:opts, 'dir') ? s:with_cd(a:cmd, a:opts.dir) : a:cmd)
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 
   if s:nvim
     call extend(job, {
@@ -1229,7 +1257,12 @@ function! s:spawn(name, cmd, opts)
       let job.lines   = ['Failed to start job']
     endif
   else
+<<<<<<< HEAD
     let job.lines = s:lines(call('s:system', [cmd]))
+=======
+    let params = has_key(a:opts, 'dir') ? [a:cmd, a:opts.dir] : [a:cmd]
+    let job.lines = s:lines(call('s:system', params))
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
     let job.error = v:shell_error != 0
     let job.running = 0
   endif
@@ -1249,9 +1282,12 @@ function! s:reap(name)
   call s:log(bullet, a:name, empty(result) ? 'OK' : result)
   call s:bar()
 
+<<<<<<< HEAD
   if has_key(job, 'batchfile') && !empty(job.batchfile)
     call delete(job.batchfile)
   endif
+=======
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
   call remove(s:jobs, a:name)
 endfunction
 
@@ -1969,6 +2005,7 @@ function! s:update_ruby()
 EOF
 endfunction
 
+<<<<<<< HEAD
 function! s:shellesc_cmd(arg)
   let escaped = substitute(a:arg, '[&|<>()@^]', '^&', 'g')
   let escaped = substitute(escaped, '%', '%%', 'g')
@@ -1982,6 +2019,10 @@ function! s:shellesc(arg)
     return s:shellesc_cmd(a:arg)
   endif
   return shellescape(a:arg)
+=======
+function! s:shellesc(arg)
+  return '"'.escape(a:arg, '"').'"'
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 endfunction
 
 function! s:glob_dir(path)
@@ -2019,6 +2060,7 @@ endfunction
 
 function! s:system(cmd, ...)
   try
+<<<<<<< HEAD
     let [sh, shellcmdflag, shrd] = s:chsh(1)
     let cmd = a:0 > 0 ? s:with_cd(a:cmd, a:1) : a:cmd
     if s:is_win
@@ -2032,6 +2074,13 @@ function! s:system(cmd, ...)
     if s:is_win
       call delete(batchfile)
     endif
+=======
+    let [sh, shrd] = s:chsh(1)
+    let cmd = a:0 > 0 ? s:with_cd(a:cmd, a:1) : a:cmd
+    return system(s:is_win ? '('.cmd.')' : cmd)
+  finally
+    let [&shell, &shellredir] = [sh, shrd]
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
   endtry
 endfunction
 
@@ -2246,16 +2295,25 @@ function! s:status()
   let unloaded = 0
   let [cnt, total] = [0, len(g:plugs)]
   for [name, spec] in items(g:plugs)
+<<<<<<< HEAD
     let is_dir = isdirectory(spec.dir)
     if has_key(spec, 'uri')
       if is_dir
+=======
+    if has_key(spec, 'uri')
+      if isdirectory(spec.dir)
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
         let [err, _] = s:git_validate(spec, 1)
         let [valid, msg] = [empty(err), empty(err) ? 'OK' : err]
       else
         let [valid, msg] = [0, 'Not found. Try PlugInstall.']
       endif
     else
+<<<<<<< HEAD
       if is_dir
+=======
+      if isdirectory(spec.dir)
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
         let [valid, msg] = [1, 'OK']
       else
         let [valid, msg] = [0, 'Not found.']
@@ -2264,7 +2322,11 @@ function! s:status()
     let cnt += 1
     let ecnt += !valid
     " `s:loaded` entry can be missing if PlugUpgraded
+<<<<<<< HEAD
     if is_dir && get(s:loaded, name, -1) == 0
+=======
+    if valid && get(s:loaded, name, -1) == 0
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
       let unloaded = 1
       let msg .= ' (not loaded)'
     endif
@@ -2353,6 +2415,7 @@ function! s:preview_commit()
   endif
   setlocal previewwindow filetype=git buftype=nofile nobuflisted modifiable
   try
+<<<<<<< HEAD
     let [sh, shellcmdflag, shrd] = s:chsh(1)
     let cmd = 'cd '.s:shellesc(g:plugs[name].dir).' && git show --no-color --pretty=medium '.sha
     if s:is_win
@@ -2366,6 +2429,12 @@ function! s:preview_commit()
     if s:is_win
       call delete(batchfile)
     endif
+=======
+    let [sh, shrd] = s:chsh(1)
+    execute 'silent %!cd' s:shellesc(g:plugs[name].dir) '&& git show --no-color --pretty=medium' sha
+  finally
+    let [&shell, &shellredir] = [sh, shrd]
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
   endtry
   setlocal nomodifiable
   nnoremap <silent> <buffer> q :q<cr>
@@ -2407,7 +2476,11 @@ function! s:diff()
     call s:append_ul(2, origin ? 'Pending updates:' : 'Last update:')
     for [k, v] in plugs
       let range = origin ? '..origin/'.v.branch : 'HEAD@{1}..'
+<<<<<<< HEAD
       let diff = s:system_chomp('git log --graph --color=never '.join(map(['--pretty=format:%x01%h%x01%d%x01%s%x01%cr', range], 's:shellesc(v:val)')), v.dir)
+=======
+      let diff = s:system_chomp('git log --graph --color=never --pretty=format:"%x01%h%x01%d%x01%s%x01%cr" '.s:shellesc(range), v.dir)
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
       if !empty(diff)
         let ref = has_key(v, 'tag') ? (' (tag: '.v.tag.')') : has_key(v, 'commit') ? (' '.v.commit) : ''
         call append(5, extend(['', '- '.k.':'.ref], map(s:lines(diff), 's:format_git_log(v:val)')))

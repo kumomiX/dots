@@ -29,6 +29,7 @@
 !.Xresources
 !.xinit
 !/.vim/
+/.vim/bundle
 !.vimrc
 !/.urxvt/
 !.pqivrc

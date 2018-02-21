@@ -10,6 +10,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'mhinz/vim-startify'
 Plug 'keith/investigate.vim'
 Plug 'Shougo/neocomplete.vim'
+<<<<<<< HEAD
 Plug 'mattn/emmet-vim',           { 'for': ['html','xhtml','css','sass','scss','less','javascript','javascript.jsx'] }
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
@@ -24,6 +25,18 @@ Plug 'kien/ctrlp.vim'
 Plug 'mxw/vim-jsx'
 Plug 'dylanaraps/wal.vim'
 Plug 'styled-components/vim-styled-components'
+=======
+Plug 'mattn/emmet-vim',           { 'for': ['html','xhtml','css','sass','scss','less'] }
+Plug 'w0rp/ale'
+Plug 'Yggdroot/indentLine'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'isRuslan/vim-es6',          { 'for': 'javascript' }
+Plug 'easymotion/vim-easymotion'
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 call plug#end()
 
 filetype on
@@ -36,13 +49,18 @@ set hlsearch
 set clipboard=unnamedplus
 set visualbell
 set t_Co=16
+<<<<<<< HEAD
 "colorscheme term " default colorscheme
 colorscheme wal
+=======
+colorscheme term " default colorscheme
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 "set background=dark
 "set termguicolors
 highlight clear SignColumn
 let mapleader = " "
 
+<<<<<<< HEAD
 "splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -50,6 +68,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set splitbelow
 
+=======
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 "lines
 set number
 set nu
@@ -83,7 +103,11 @@ set autoindent
 autocmd BufWritePre * :%s/\s\+$//e
 
 "indentLine
+<<<<<<< HEAD
 let g:indentLine_char = '|'
+=======
+let g:indentLine_char = '>'
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 
 "look up documetation
 nnoremap <F1> :call investigate#Investigate()<CR>
@@ -99,6 +123,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 inoremap <Nul> <C-n>
 
 "emmet j-k instead of c-y
+<<<<<<< HEAD
 au FileType html,css,sass,scss,less,javascript,javascript.jsx imap <expr><F4> emmet#expandAbbrIntelligent("\<tab>")
 au FileType html,css,sass,scss,less,javascript,javascript.jsx imap <expr>jk   emmet#expandAbbrIntelligent("\<tab>")
 au FileType html                    imap <C-\>      <CR><CR><Esc>ki<Tab>
@@ -118,6 +143,16 @@ let g:ale_linters = {'javascript': ['eslint'],
 let g:ale_fixers = {
 \   'javascript':['prettier'],
 \   'javascript.jsx':['prettier'],
+=======
+au FileType html,css,sass,scss,less imap <expr><F4> emmet#expandAbbrIntelligent("\<tab>")
+au FileType html,css,sass,scss,less imap <expr>jk   emmet#expandAbbrIntelligent("\<tab>")
+au FileType html                    imap <C-\>      <CR><CR><Esc>ki<Tab>
+
+"ALE config
+let g:ale_linters = {'javascript': ['jshint']}
+let g:ale_fixers = {
+\   'javascript':['prettier'],
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 \   'typescript':['prettier'],
 \         'less':['prettier'],
 \         'scss':['prettier'],
@@ -132,6 +167,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_save = 1
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
+<<<<<<< HEAD
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '~'
 let g:ale_enabled = 0
@@ -140,6 +176,15 @@ nmap <F3> <Plug>(ale_toggle)
 
 "node build system bind
 nnoremap <F8> :!node "%"<CR>
+=======
+let g:ale_sign_error = '~'
+let g:ale_sign_warning = '+'
+let g:ale_enabled = 0
+nmap <F3> <Plug>(ale_toggle)
+
+"node build system bind
+nnoremap <F5> :!node "%"<CR>
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 noremap <silent> <C-S> :update<CR>
 
 "snippets
@@ -151,7 +196,10 @@ map <leader>r :Ranger<CR>
 
 "easymotion
 "let g:EasyMotion_move_highlight = 0
+<<<<<<< HEAD
 
 "CtrlP
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
+=======
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c

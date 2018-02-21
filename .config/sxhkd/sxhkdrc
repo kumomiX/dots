@@ -2,7 +2,10 @@
 #
 # wm independent hotkeys
 #
+<<<<<<< HEAD
 #. "${HOME}/.cache/wal/colors.sh"
+=======
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 
 # terminal emulator
 super + Return
@@ -10,12 +13,17 @@ super + Return
 
 # program launcher
 super + d
+<<<<<<< HEAD
   ~/.config/dmen.sh
 
 
 #dmenu_run -fn 'GohuFont-14' -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"
 #dmenu_run -fn 'GohuFont-14' -sb $focus_color -sf $fg_color -nf $fg_color -nb $bg_color
 #rofi -show run
+=======
+  dmenu_run -fn 'gohu gohufont-14' -sb $focus_color -sf $fg_color -nf $fg_color -nb $bg_color
+  #rofi -show run
+>>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 
 
 # make sxhkd reload its configuration files:
