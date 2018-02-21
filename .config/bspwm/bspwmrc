@@ -10,7 +10,6 @@
 #                    \ \_\
 #                     \/_/
 
-<<<<<<< HEAD
 #export BSPWM_INITIAL_STATE="/home/kumomi/.config/bspwm/bspwm-initial_state.json"
 #bspc wm -l "$BSPWM_INITIAL_STATE"
 bspc monitor -d I II III IV V VI
