@@ -14,7 +14,6 @@
 
 [colors]
 transparent = #00000000
-<<<<<<< HEAD
 foreground  = ${xrdb:color7}
 background  = ${xrdb:color0}
 urgent-bg = #9575cd
@@ -39,32 +38,6 @@ inactive-text = #676e7d
 #bcyan     = ${xrdb:color6}
 bwhite    = ${xrdb:color7}
 #bgrey     = #7c6f64
-=======
-foreground  = ${xrdb:foreground}
-background  = ${xrdb:background}
-urgent-bg = #9575cd
-inactive-text = #676e7d
-
-black       = ${xrdb:color8}
-red         = ${xrdb:color9}
-green       = ${xrdb:color10}
-yellow      = ${xrdb:color11}
-blue        = ${xrdb:color12}
-magenta     = ${xrdb:color13}
-cyan        = ${xrdb:color14}
-white       = ${xrdb:color15}
-grey        = #928374
-
-bblack    = ${xrdb:color0}
-bred      = ${xrdb:color1}
-bgreen    = ${xrdb:color2}
-byellow   = ${xrdb:color3}
-bblue     = ${xrdb:color4}
-bmagenta  = ${xrdb:color5}
-bcyan     = ${xrdb:color6}
-bwhite    = ${xrdb:color7}
-bgrey     = #7c6f64
->>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 
 
 [bar/bar1]
@@ -126,11 +99,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 separator = 
-<<<<<<< HEAD
 font-0 = GohuFont:size=10;1
-=======
-font-0 = lucy tewi:size=10;1
->>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 font-1 = WunconSiji:size=10;1
 font-3 = siji:size=10;1
 font-4 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1:size10;1
@@ -164,16 +133,9 @@ foreground = ${colors.foreground}
 
 separator = 
 
-<<<<<<< HEAD
 font-0 = GohuFont:size=10;1
 font-1 = siji:size=10;1
 font-2 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1:size10;1
-=======
-font-0 = lucy tewi:size=12;1
-font-1 = WunconSiji:size=10;1
-font-3 = siji:size=10;1
-font-4 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1:size10;1
->>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 
 modules-center= date
 

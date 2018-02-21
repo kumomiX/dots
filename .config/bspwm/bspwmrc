@@ -15,12 +15,6 @@
 #bspc wm -l "$BSPWM_INITIAL_STATE"
 bspc monitor -d I II III IV V VI
 . "${HOME}/.cache/wal/colors.sh"
-=======
-export BSPWM_INITIAL_STATE="/home/kumomi/.config/bspwm/bspwm-initial_state.json"
-bspc wm -l "$BSPWM_INITIAL_STATE"
-bspc monitor -d I II III IV V VI
-xrdb /home/kumomi/.Xresources
->>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 
 # Looks
 bspc config focus_follows_pointer true
@@ -28,7 +22,6 @@ bspc config border_width        5
 bspc config window_gap 50
 bspc config bottom_padding 10
 bspc config split_ratio          0.50
-<<<<<<< HEAD
 bspc config normal_border_color "$color1"
 bspc config active_border_color "$color2"
 bspc config focused_border_color "$color15"
@@ -38,18 +31,11 @@ bspc config presel_feedback_color "$color1"
 #bspc config normal_border_color "$bg_color"
 #bspc config focused_border_color "$focus_color"
 #bspc config presel_feedback_color "$focus_color"
-=======
-bspc config active_border_color "$focus_color"
-bspc config normal_border_color "$bg_color"
-bspc config focused_border_color "$focus_color"
-bspc config presel_feedback_color "$focus_color"
->>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config paddingless_monocle  true
 
 # Placement rules
-<<<<<<< HEAD
 #bspc rule -a chromium -o node=@^1:^1:/
 ##bspc rule -a Vivaldi-stable -o node=@^1:^1:/
 #bspc rule -a mpv:dnc -o node=@^1:^2:/1/2/1
@@ -60,16 +46,6 @@ bspc config paddingless_monocle  true
 
 # General rules
 bspc rule -a chromium desktop=^1
-=======
-bspc rule -a Vivaldi-stable -o node=@^1:^1:/
-bspc rule -a mpv:dnc -o node=@^1:^2:/1/2/1
-bspc rule -a URxvt:music -o node=@^1:^2:/2/1/2
-bspc rule -a URxvt:ranger -o node=@^1:^3:/1
-bspc rule -a URxvt:main -o node=@^1:^3:/2/1
-bspc rule -a URxvt:main1 -o node=@^1:^3:/2/2
-
-# General rules
->>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
 bspc rule -a mpv state=floating
 bspc rule -a Sxiv state=floating
 bspc rule -a Zathura state=tiled
@@ -77,7 +53,6 @@ bspc rule -a mpv:dnc state=pseudo_tiled desktop=^2
 bspc rule -a URxvt:music state=pseudo_tiled desktop=^2
 
 # AutoStart
-<<<<<<< HEAD
 wal -a 95 -i /home/kumomi/pics/walls/1428615705636.jpg
 #mpd .config/mpd/mpd.conf
 chromium &
@@ -88,15 +63,3 @@ chromium &
 #urxvtc -name ranger -e ranger &
 sh ~/.config/polybar/launch.sh &
 #sh ~/.config/scripts/wall.sh
-=======
-ntfs-3g /dev/sda3 /mnt/windows
-mpd .config/mpd/mpd.conf
-vivaldi-stable &
-urxvtc -name music -e ncmpcpp &
-mpv -name dnc --ao=null /media/windows/cloud/pics/girls/dance/15133657204850.webm &
-urxvtc -name main &
-urxvtc -name main1 &
-urxvtc -name ranger -e ranger &
-sh ~/.config/polybar/launch.sh &
-sh ~/.config/scripts/wall.sh
->>>>>>> 3d64bd84e3045a09d97a0bdba6c8c91788e1f08c
