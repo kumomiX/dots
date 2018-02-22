@@ -32,6 +32,7 @@ call plug#end()
 
 filetype on
 syntax on
+set listchars=eol:¬,trail:~,space:·
 set clipboard=unnamedplus
 set showmatch
 set hidden

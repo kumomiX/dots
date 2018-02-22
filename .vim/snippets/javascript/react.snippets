@@ -1,3 +1,26 @@
 snippet imr
 	import React from 'react'
-
+snippet rcc
+	import React { Component } from 'react'
+	class ${1:`Filename()`} extends Component {
+		render() {
+			return (${0})
+		}
+	}
+	export default $1
+snippet rc
+	class ${1:`Filename()`} extends Component {
+		render() {
+			return ($0)
+		}
+	}
+snippet rfc
+	import React from 'react'
+	const ${1:`Filename()`} = ({ ${2} }) => (${3})
+	export default $1
+snippet rsc
+	import styled from 'styled-components'
+	const ${1:`Filename()`} = styled.${2:div}\`
+		${0}
+	\`
+	export default $1
