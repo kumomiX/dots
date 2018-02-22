@@ -7,6 +7,9 @@ if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
   exec startx
 fi
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

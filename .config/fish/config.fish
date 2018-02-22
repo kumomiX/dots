@@ -14,7 +14,7 @@ alias shell="r ~/.config/fish/"
 alias bspwmrc="vim ~/.config/bspwm/bspwmrc"
 
 alias music="ncmpcpp"
-alias v="vim"
+alias v="nvim"
 alias r="ranger"
 alias conf="r ~/.config/"
 alias pics="r /media/windows/cloud/pics"

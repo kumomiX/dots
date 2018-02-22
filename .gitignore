@@ -13,6 +13,11 @@
 !/.config/scripts/
 /.config/scripts/folders.txt
 
+
+!/.config/nvim/
+/.config/nvim/plugged
+
+
 !/.config/mpd/
 /.config/mpd/*
 !/.config/mpd/mpd.conf

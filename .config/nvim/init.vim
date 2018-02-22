@@ -5,15 +5,36 @@
 " \ \___/ \ \_\ \_\ \_\ \_\ \_\ \____\
 "  \/__/   \/_/\/_/\/_/\/_/\/_/\/____/
 "
-call plug#begin('~/.vim/bundle')
+
+
+call plug#begin('~/.config/nvim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'keith/investigate.vim'
-Plug 'Shougo/neocomplete.vim'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+
+Plug 'Shougo/neosnippet'
+   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+   smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+   xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+  let g:neosnippet#disable_runtime_snippets = 1
+  let g:neosnippet#enable_snipmate_compatibility = 1
+	" SuperTab like snippets' behavior.
+	imap <expr><TAB>
+	 \ pumvisible() ? "\<C-n>" :
+	 \ neosnippet#expandable_or_jumpable() ?
+	 \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+	smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+	 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+
 Plug 'w0rp/ale'
 "Plug 'Yggdroot/indentLine'
 Plug 'tomtom/tlib_vim'
 Plug 'marcweber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
+"Plug 'garbas/vim-snipmate'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'easymotion/vim-easymotion'
@@ -33,7 +54,7 @@ call plug#end()
 filetype on
 syntax on
 set listchars=eol:¬,trail:~,space:·
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set showmatch
 set hidden
 set history=100
@@ -93,15 +114,6 @@ let g:indentLine_char = '|'
 "look up documetation
 nnoremap <F1> :call investigate#Investigate()<CR>
 
-"tab for neocomplete
-let g:neocomplete#enable_at_startup = 1 "enable at startup
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"inoremap <expr><Space> pumvisible() ? "\<C-n>" : "\<Space>"
-inoremap <Nul> <C-n>
 
 "emmet j-k instead of c-y
 au FileType html,css,sass,scss,less,javascript,javascript.jsx imap <expr><F4> emmet#expandAbbrIntelligent("\<tab>")
@@ -140,7 +152,7 @@ highlight clear ALEWarningSign
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '~'
 let g:ale_enabled = 0
-let g:ale_javascript_prettier_eslint_options = '--single-quote --trailing-comma es5 --no-semi'
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --no-semi'
 nmap <F3> <Plug>(ale_toggle)
 
 "node build system bind
