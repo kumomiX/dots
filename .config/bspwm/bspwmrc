@@ -54,7 +54,9 @@ bspc rule -a URxvt:music state=pseudo_tiled desktop=^2
 
 # AutoStart
 wal -a 90 -l -g -i /home/kumomi/pics/walls/dusa.png
-mpd .config/mpd/mpd.conf
+killall dunst;~/.config/scripts/startdunst.sh &
+mpd .config/mpd/mpd.conf &
+.config/scripts/mpdnotify start &
 chromium &
 #urxvtc -name music -e ncmpcpp &
 #mpv -name dnc --ao=null /media/windows/cloud/pics/girls/dance/15133657204850.webm &

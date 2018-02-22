@@ -22,11 +22,19 @@
 
 !/.config/zathura/
 
+!/.config/dunst/
+
+!/.config/mpdnotify/
+!/.config/mpdnotify/*
+!/.config/mpdnotify/config
+
 !/.config/beets/
 /.config/beets/*
 !/.config/beets/config.yaml
 
+!/.fonts/
 !.Xresources
+!.bashrc
 !.xinit
 !/.vim/
 /.vim/bundle
@@ -34,4 +42,3 @@
 !/.urxvt/
 !.pqivrc
 
-!MoscowSans.ttf

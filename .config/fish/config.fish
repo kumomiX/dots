@@ -13,6 +13,7 @@ alias xr="sudo xbps-remove"
 alias shell="r ~/.config/fish/"
 alias bspwmrc="vim ~/.config/bspwm/bspwmrc"
 
+alias music="ncmpcpp"
 alias v="vim"
 alias r="ranger"
 alias conf="r ~/.config/"

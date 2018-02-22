@@ -6,9 +6,9 @@
 !    /\_\\ \_\ \_\ \____\/\____\ \____/\ \____/\ \_\ \____\ \____\/\____/
 !    \/_/ \/_/\/_/\/____/\/___/ \/___/  \/___/  \/_/\/____/\/____/\/___/
 !
+URxvt*font:     xft:Profont:pixelsize=14
+URxvt*boldFont: xft:Profont:pixelsize=14
 !URxvt*font:     xft:Gohufont:pixelsize=14
-URxvt*font:     xft:Profont:pixelsize=18
-URxvt*boldFont: xft:Profont:pixelsize=18
 !URxvt*boldFont: xft:Gohufont:pixelsize=14
 
 ! special
@@ -59,4 +59,11 @@ URxvt*cursorBlink: true
 !URxvt*tintColor: S_base03
 !URxvt.transparent:   true
 !URxvt.shading:       15
-
+!URxvt plugins
+URxvt*perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: default,matcher,keyboard-select,resize-font
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.keysym.M-Escape: perl:keyboard-select:activate

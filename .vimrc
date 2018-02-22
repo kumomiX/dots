@@ -9,7 +9,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'mhinz/vim-startify'
 Plug 'keith/investigate.vim'
 Plug 'Shougo/neocomplete.vim'
-Plug 'mattn/emmet-vim',           { 'for': ['html','xhtml','css','sass','scss','less','javascript','javascript.jsx'] }
 Plug 'w0rp/ale'
 "Plug 'Yggdroot/indentLine'
 Plug 'tomtom/tlib_vim'
@@ -17,15 +16,18 @@ Plug 'marcweber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'isRuslan/vim-es6',          { 'for': ['javascript','javascript.jsx'] }
 Plug 'easymotion/vim-easymotion'
 Plug 'kien/ctrlp.vim'
-Plug 'mxw/vim-jsx'
-Plug 'dylanaraps/wal.vim'
-Plug 'styled-components/vim-styled-components'
+Plug 'francoiscabrol/ranger.vim'
 Plug 'ddrscott/vim-side-search'
 Plug 'Raimondi/delimitMate'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/goyo.vim'
+Plug 'dylanaraps/wal.vim'
+Plug 'isRuslan/vim-es6',          { 'for': ['javascript','javascript.jsx'] }
+Plug 'mattn/emmet-vim',           { 'for': ['html','xhtml','css','sass','scss','less','javascript','javascript.jsx'] }
+Plug 'styled-components/vim-styled-components'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 filetype on
@@ -161,6 +163,11 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 " SideSearch current word and return to original window
 nnoremap <Leader>s :SideSearch <C-r><C-w><CR> | wincmd p
 
+
+" Distractio free
+nnoremap <F11> :Goyo <CR>
+
+"Create new dir if it doesnt exist
 function s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
@@ -173,3 +180,32 @@ augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
+
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if has('nvim')
+    call deoplete#disable()
+  endif
+  if !has('nvim')
+    exe 'NeoCompleteDisable'
+  endif
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if has('nvim')
+    call deoplete#enable()
+  endif
+  if !has('nvim')
+    exe 'NeoCompleteEnable'
+  endif
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
+
+
+

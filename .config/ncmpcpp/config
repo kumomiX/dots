@@ -7,13 +7,16 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.config/ncmpcpp/lyrics
 mpd_host = "localhost"
 mpd_port = 6600
-mpd_music_dir = ~/media/windows/music
+mpd_music_dir = ~/cloud/music
 mpd_crossfade_time = 5
+#execute_on_song_change = ~/.config/ncmpcpp/notify.py
 
 # display
 song_list_format = {%a - %t}|{%f}
 song_columns_list_format = "(75)[8]{t}(25)[6]{ar}"
 song_status_format = "'%t' $6by $6%a"
+alternative_header_first_line_format = "{$5%t$/b}"
+alternative_header_second_line_format= "$7{$b%a$/b}$9 - $5{%b}$9"
 playlist_display_mode = "columns"
 #song_library_format = {%n - }{%t}|{%f}
 
@@ -21,6 +24,10 @@ playlist_display_mode = "columns"
 now_playing_prefix = " $8-"
 #now_playing_suffix = " $8×"
 browser_playlist_prefix = "$3 ♥ $3 "
+selected_item_prefix = "$6"
+selected_item_suffix = "$9"
+user_interface = "alternative" (classic/alternative)
+header_visibility = "no"
 
 # delays
 playlist_disable_highlight_delay = "1"
@@ -48,7 +55,7 @@ centered_cursor = "yes"
 titles_visibility = "no"
 statusbar_visibility = "yes"
 mouse_support = "no"
-header_visibility = "yes"
+#header_visibility = "yes"
 display_remaining_time = "no"
 ask_before_clearing_playlists = "yes"
 discard_colors_if_item_is_selected = "yes"
@@ -62,7 +69,6 @@ visualizer_sync_interval = "30"
 visualizer_output_name = "fifo"
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_type = "wave" (spectrum/wave)
-visualizer_sample_multiplier = 0.20
 visualizer_color = magenta, cyan, white, blue
 visualizer_look = "∙~"
 

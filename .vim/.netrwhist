@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/kumomi/.vim/bundle/vim-snipmate/after'
 let g:netrw_dirhist_2='/home/kumomi/.vim/bundle/vim-snipmate/after/plugin'
 let g:netrw_dirhist_3='/home/kumomi/.vim/bundle/vim-snipmate/after'
 let g:netrw_dirhist_4='/home/kumomi/.vim/bundle/vim-snipmate'
 let g:netrw_dirhist_5='/home/kumomi/.vim/bundle'
+let g:netrw_dirhist_6='/home/kumomi/.config/mpd'
+let g:netrw_dirhist_7='/usr/share/dbus-1/services'
+let g:netrw_dirhist_8='/home/kumomi/.config/ncmpcpp'
