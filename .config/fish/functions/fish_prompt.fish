@@ -1,3 +1,1 @@
-function fish_prompt
-	echo -n (prompt_pwd) '>> '
-end
+/home/kumomi/.local/share/omf/themes/pure/fish_prompt.fish

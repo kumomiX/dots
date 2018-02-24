@@ -16,5 +16,5 @@ export VISUAL=nvim
 (cat ~/.cache/wal/sequences &)
 
 PS1='\u >> '
-cat ~/cat.txt
+#cat ~/cat.txt
 exec fish

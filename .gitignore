@@ -8,7 +8,7 @@
 !/.config/sxhkd/
 !/.config/wall.sh
 !/.config/polybar/
-!/.config/compton.conf
+!/.config/.compton.conf
 !/.config/fish/
 !/.config/scripts/
 /.config/scripts/folders.txt
@@ -38,6 +38,7 @@
 !/.config/beets/config.yaml
 
 !/.fonts/
+/.fonts/Noto
 !.Xresources
 !.bashrc
 !.xinit

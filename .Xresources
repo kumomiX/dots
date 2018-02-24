@@ -47,18 +47,27 @@ URxvt*boldFont: xft:Profont:pixelsize=14
 ! white
 *.color7:       #ad2e3e
 *.color15:      #ebe1d9
+
 !URxvt SETTINGS
 !URxvt*dynamicColors: on
 URxvt.internalBorder: 30
 URxvt*lineSpace: 2
 URxvt*scrollBar: false
-URxvt.geometry: 80x18
+URxvt.geometry: 100x30
 URxvt*saveLines: 1000
 URxvt*cursorUnderline: false
 URxvt*cursorBlink: true
-!URxvt*tintColor: S_base03
+
+! transparency
+!URxvt.transparent: true
+!URxvt.tintColor: #2d2d2d
+URxvt.shading: 40
+URxvt.blurRadius: 30
+!URxvt*blurRadius: 5
 !URxvt.transparent:   true
+!URxvt*tintColor: #ffffff
 !URxvt.shading:       15
+
 !URxvt plugins
 URxvt*perl-lib: /usr/lib/urxvt/perl/
 URxvt.perl-ext-common: default,matcher,keyboard-select,resize-font

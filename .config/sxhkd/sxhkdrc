@@ -16,6 +16,9 @@ super + d
 #dmenu_run -fn 'GohuFont-14' -sb $focus_color -sf $fg_color -nf $fg_color -nb $bg_color
 #rofi -show run
 
+super + w
+  tdrop -w -10 -h 20% -a urxvtc
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd

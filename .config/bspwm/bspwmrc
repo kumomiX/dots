@@ -53,7 +53,8 @@ bspc rule -a mpv:dnc state=pseudo_tiled desktop=^2
 bspc rule -a URxvt:music state=pseudo_tiled desktop=^2
 
 # AutoStart
-wal -a 90 -l -g -i /home/kumomi/pics/walls/dusa.png
+#wal -a 90 -l -g -i /home/kumomi/pics/walls/dusa.png
+wal -a 90 -l -g -i pics/walls/1428615705636.jpg
 killall dunst;~/.config/scripts/startdunst.sh &
 mpd .config/mpd/mpd.conf &
 .config/scripts/mpdnotify start &

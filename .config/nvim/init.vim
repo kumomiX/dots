@@ -13,22 +13,11 @@ Plug 'keith/investigate.vim'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
+  let g:deoplete#auto_completion_start_length = 3
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
-Plug 'Shougo/neosnippet'
-   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-   smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-   xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-  let g:neosnippet#disable_runtime_snippets = 1
-  let g:neosnippet#enable_snipmate_compatibility = 1
-	" SuperTab like snippets' behavior.
-	imap <expr><TAB>
-	 \ pumvisible() ? "\<C-n>" :
-	 \ neosnippet#expandable_or_jumpable() ?
-	 \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-	smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-	 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
+Plug 'mklabs/split-term.vim'
 
 Plug 'w0rp/ale'
 "Plug 'Yggdroot/indentLine'
@@ -69,12 +58,32 @@ colorscheme wal
 highlight clear SignColumn
 let mapleader = " "
 
+
+
+"snippets
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+" let g:neosnippet#disable_runtime_snippets = 1
+let g:neosnippet#enable_snipmate_compatibility = 1
+" SuperTab like snippets' behavior.
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
 "splits
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <M-j> <C-W><C-J>
+nnoremap <M-k> <C-W><C-K>
+nnoremap <M-l> <C-W><C-L>
+nnoremap <M-h> <C-W><C-H>
 set splitbelow
+
+"term
+autocmd BufWinEnter,WinEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
 
 "lines
 set number
@@ -167,7 +176,18 @@ map <leader>r :Ranger<CR>
 "let g:EasyMotion_move_highlight = 0
 
 "CtrlP
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+if executable('ag')
+  " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files. Lightning fast, respects .gitignore
+  " and .agignore. Ignores hidden files by default.
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -f -g ""'
+else
+  "ctrl+p ignore files in .gitignore
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+endif
+
 
 " SideSearch current word and return to original window
 nnoremap <Leader>s :SideSearch <C-r><C-w><CR> | wincmd p
