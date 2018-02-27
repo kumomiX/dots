@@ -2,7 +2,6 @@
 #
 # wm independent hotkeys
 #
-. "${HOME}/.cache/wal/colors.sh"
 
 # terminal emulator
 super + Return
@@ -17,7 +16,7 @@ super + d
 #rofi -show run
 
 super + w
-  tdrop -w -10 -h 20% -a urxvtc
+  tdrop -w -10 -h 50% -a urxvtc
 
 # make sxhkd reload its configuration files:
 super + Escape

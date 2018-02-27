@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/mnt/files/code/webpacks'
 let g:netrw_dirhist_2='/mnt/files/code/webpacks/src'
 let g:netrw_dirhist_3='/mnt/files/code/webpacks/src/app'
 let g:netrw_dirhist_4='/mnt/files/code/webpacks/src/app/components'
 let g:netrw_dirhist_5='/mnt/files/code/thal'
+let g:netrw_dirhist_6='/mnt/files/code/ytfront'
+let g:netrw_dirhist_7='/mnt/files/code/ytfront/src'

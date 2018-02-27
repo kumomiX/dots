@@ -6,63 +6,33 @@
 !    /\_\\ \_\ \_\ \____\/\____\ \____/\ \____/\ \_\ \____\ \____\/\____/
 !    \/_/ \/_/\/_/\/____/\/___/ \/___/  \/___/  \/_/\/____/\/____/\/___/
 !
-URxvt*font:     xft:Profont:pixelsize=14
-URxvt*boldFont: xft:Profont:pixelsize=14
-!URxvt*font:     xft:Gohufont:pixelsize=14
+!URxvt*font:     xft:tewi:size=14
+!URxvt*boldFont: xft:tewi:bold:size=14
+!URxvt*font:     xft:Terminus:size=12
+!URxvt*boldFont: xft:Terminus:size=12
+!URxvt*font:     xft:ProFont:size=13
+!URxvt*boldFont: xft:ProFont:size=13
+URxvt.font:     xft:scientifica:size=12
 !URxvt*boldFont: xft:Gohufont:pixelsize=14
 
-! special
-*.foreground:   #ffffff
-*.background:   #000
-*.cursorColor:  #ffffff
-
-! black
-*.color0:       #0a1015
-*.color8:       #ddbbbb
-
-! red
-*.color1:       #bbccaa
-*.color9:       #bbccaa
-
-! green
-*.color2:       #f5f2b3
-*.color10:      #f5f2b3
-
-! yellow
-*.color3:       #ad2e3e
-*.color11:      #ad2e3e
-
-! blue
-*.color4:       #b8d7e0
-*.color12:      #b8d7e0
-
-! magenta
-*.color5:       #ddbbbb
-*.color13:      #ddbbbb
-
-! cyan
-*.color6:       #ff95aa
-*.color14:      #ff95aa
-
-! white
-*.color7:       #ad2e3e
-*.color15:      #ebe1d9
+#include "pepper.xresources"
 
 !URxvt SETTINGS
 !URxvt*dynamicColors: on
-URxvt.internalBorder: 30
+URxvt.internalBorder      : 34
+URxvt.geometry            : 70x35
+URxvt.thickness           : 5
 URxvt*lineSpace: 2
 URxvt*scrollBar: false
-URxvt.geometry: 100x30
 URxvt*saveLines: 1000
 URxvt*cursorUnderline: false
 URxvt*cursorBlink: true
 
 ! transparency
 !URxvt.transparent: true
-!URxvt.tintColor: #2d2d2d
-URxvt.shading: 40
-URxvt.blurRadius: 30
+!URxvt*tintColor: #ffffff
+!URxvt.shading: 40
+!URxvt.blurRadius: 40
 !URxvt*blurRadius: 5
 !URxvt.transparent:   true
 !URxvt*tintColor: #ffffff

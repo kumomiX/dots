@@ -6,17 +6,13 @@
 /.config/*
 !/.config/bspwm/
 !/.config/sxhkd/
-!/.config/wall.sh
 !/.config/polybar/
 !/.config/.compton.conf
-!/.config/fish/
 !/.config/scripts/
 /.config/scripts/folders.txt
 
-
 !/.config/nvim/
 /.config/nvim/plugged
-
 
 !/.config/mpd/
 /.config/mpd/*
@@ -40,11 +36,8 @@
 !/.fonts/
 /.fonts/Noto
 !.Xresources
-!.bashrc
-!.xinit
-!/.vim/
-/.vim/bundle
-!.vimrc
+!.xinitrc
 !/.urxvt/
 !.pqivrc
-
+!.zshrc
+!.zpreztorc
