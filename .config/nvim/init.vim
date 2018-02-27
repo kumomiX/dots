@@ -265,7 +265,7 @@ set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=%#SecondaryBlock#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#TeritaryBlock#
-set statusline+=\ %f
+set statusline+=\ %f\
 set statusline+=%M\ 
 set statusline+=%#Blanks#
 set statusline+=%=

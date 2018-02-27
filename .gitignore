@@ -10,6 +10,8 @@
 !/.config/.compton.conf
 !/.config/scripts/
 /.config/scripts/folders.txt
+!/.config/fontconfig/
+!/.config/palettes/
 
 !/.config/nvim/
 /.config/nvim/plugged
@@ -32,6 +34,10 @@
 !/.config/beets/
 /.config/beets/*
 !/.config/beets/config.yaml
+
+!/.config/ranger/
+/.config/ranger/*
+!/.config/ranger/rifle.conf
 
 !/.fonts/
 /.fonts/Noto

@@ -15,7 +15,7 @@
 URxvt.font:     xft:scientifica:size=12
 !URxvt*boldFont: xft:Gohufont:pixelsize=14
 
-#include "pepper.xresources"
+#include ".config/palettes/pepper.xresources"
 
 !URxvt SETTINGS
 !URxvt*dynamicColors: on

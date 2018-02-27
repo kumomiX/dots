@@ -10,7 +10,7 @@ feh --bg-fill /mnt/files/cloud/pics/walls/9763289395_a5f984f63b_h.jpg
 
 compton -b --config ~/.config/.compton.conf
 
-xrdb -I $HOME/.config/palettes ~/.Xresources
+xrdb -I $HOME ~/.Xresources
 
 # Colors
 export Xcolor0=$(xrdb -query | grep color0 | cut -f2)

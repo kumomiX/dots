@@ -3,14 +3,14 @@
 source "${HOME}/.cache/wal/colors.sh"
 
 /usr/bin/dunst \
-    -lb "${color0:-#F0F0F0}" \
-    -nb "${color0:-#F0F0F0}" \
-    -cb "${color0:-#F0F0F0}" \
-    -lf "${color15:=#000000}" \
-    -bf "${color15:=#000000}" \
-    -cf "${color15:=#000000}" \
-    -nf "${color15:=#000000}" \
-    -lfr "${color2}" \
-    -nfr "${color2}" \
-    -cfr "${color2}" \
+    -lb "${Xcolor0:-#F0F0F0}" \
+    -nb "${Xcolor0:-#F0F0F0}" \
+    -cb "${Xcolor0:-#F0F0F0}" \
+    -lf "${Xcolor15:=#000000}" \
+    -bf "${Xcolor15:=#000000}" \
+    -cf "${Xcolor15:=#000000}" \
+    -nf "${Xcolor15:=#000000}" \
+    -lfr "${Xcolor2}" \
+    -nfr "${Xcolor2}" \
+    -cfr "${Xcolor2}" \
 
