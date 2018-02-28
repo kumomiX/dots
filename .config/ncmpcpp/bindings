@@ -4,11 +4,6 @@ def_key "space":
     add_item_to_playlist
     pause
 
-def_key "f"
-    find
-def_key "f"
-    find_item_forward
-
 def_key "+"
     show_clock
 def_key "="

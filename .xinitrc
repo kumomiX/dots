@@ -1,7 +1,6 @@
-#!/usr/bin/sh
-
 
 urxvtd &
+
 
 /usr/bin/xset b off &
 setxkbmap -layout "us,ru" -option grp:alt_shift_toggle

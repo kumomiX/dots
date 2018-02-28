@@ -11,9 +11,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
-  map <C-b> :NERDTreeToggle<CR>
-  nnoremap <Leader>b :NERDTreeFind<CR>
-  " open nerdtree when starting vim with no argv
+  map <C-b> :NERDTreeToggle<CR> nnoremap <Leader>b :NERDTreeFind<CR> " open nerdtree when starting vim with no argv
   autocmd StdinReadPre * let s:std_in=1
   autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   " close when opening a file
@@ -130,10 +128,9 @@ Plug 'mattn/emmet-vim',           { 'for': ['html','xhtml','css','sass','scss','
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'dylanaraps/wal.vim'
-Plug 'isRuslan/vim-es6',          { 'for': ['javascript','javascript.jsx'] }
+"Plug 'isRuslan/vim-es6',          { 'for': ['javascript','javascript.jsx'] }
 Plug 'styled-components/vim-styled-components'
 Plug 'mxw/vim-jsx'
-
 call plug#end()
 " }}}
 
@@ -265,7 +262,7 @@ set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=%#SecondaryBlock#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#TeritaryBlock#
-set statusline+=\ %f\
+set statusline+=\ %f\ 
 set statusline+=%M\ 
 set statusline+=%#Blanks#
 set statusline+=%=
@@ -284,6 +281,15 @@ function! StatuslineGit()
 endfunction
 " }}}
 
+
+" git gutter settings {{{
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_sign_added                     = '+'
+let g:gitgutter_sign_modified                  = '±'
+let g:gitgutter_sign_removed                   = '-'
+let g:gitgutter_sign_removed_first_line        = '^'
+let g:gitgutter_sign_modified_removed          = '#'
+" }}}
 
 
 

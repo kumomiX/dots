@@ -1,5 +1,5 @@
 set recolor "true"
-set font "gohu gohufont 9"
+set font "scientifica 11"
 set selection-clipboard clipboard
 #set recolor-lightcolor "#f3ffff"
 #set recolor-darkcolor  "#0A1015"
@@ -10,4 +10,5 @@ set completion-bg "#dcdccc"
 set recolor-darkcolor "#dcdccc"
 set recolor-lightcolor "#1f1f1f"
 set window-title-basename true
+set smooth-scroll true
 map <Space> navigate next

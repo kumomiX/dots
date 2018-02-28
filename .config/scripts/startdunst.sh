@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-source "${HOME}/.cache/wal/colors.sh"
+#!/usr/bin/env zsh
 
 /usr/bin/dunst \
     -lb "${Xcolor0:-#F0F0F0}" \

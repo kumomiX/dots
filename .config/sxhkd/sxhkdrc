@@ -1,4 +1,3 @@
-#!/usr/bin/sh
 #
 # wm independent hotkeys
 #
@@ -11,6 +10,12 @@ super + Return
 super + d
   ~/.config/dmen.sh
 
+super + alt + @KP_5
+  mpc toggle
+
+super + @KP_5
+  mpc toggle
+
 #dmenu_run -fn 'GohuFont-14' -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"
 #dmenu_run -fn 'GohuFont-14' -sb $focus_color -sf $fg_color -nf $fg_color -nb $bg_color
 #rofi -show run
@@ -22,6 +27,33 @@ super + w
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + r
+    urxvtc -name ranger -e ranger
+
+super + v
+    urxvtc -name nvim -e nvim
+
+super + m
+    urxvtc -name ncmpcpp -e ncmpcpp
+
+Print
+  scrot -q 80 -e 'mv $f ~/media/scrots'
+
+# media controls
+super + p
+  mpc toggle
+
+super + i
+  mpc seek -5
+
+super + o
+  mpc seek +5
+
+super + shift + i
+  mpc prev
+
+super + shift + o
+  mpc next
 #
 # bspwm hotkeys
 #
@@ -129,7 +161,7 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # insert receptacle, or clear receptacles on current desktop
-super + {_,shift} + r
+super + {_,shift} + y
   insert={true,false}; $insert && bspc node -i || for win in `bspc query -N -n .leaf.!window`; do bspc node $win -k ; done;
 
 

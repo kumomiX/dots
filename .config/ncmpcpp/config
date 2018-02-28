@@ -14,7 +14,7 @@ mpd_crossfade_time = 5
 # display
 song_list_format = {%a - %t}|{%f}
 song_columns_list_format = "(75)[8]{t}(25)[6]{ar}"
-song_status_format = "'%t' $6by $6%a"
+song_status_format = "'%t' $1by $6%a"
 alternative_header_first_line_format = "{$5%t$/b}"
 alternative_header_second_line_format= "$7{$b%a$/b}$9 - $5{%b}$9"
 playlist_display_mode = "columns"
@@ -24,7 +24,7 @@ playlist_display_mode = "columns"
 now_playing_prefix = " $8-"
 #now_playing_suffix = " $8×"
 browser_playlist_prefix = "$3 ♥ $3 "
-selected_item_prefix = "$6"
+selected_item_prefix = "$1"
 selected_item_suffix = "$9"
 user_interface = "alternative" (classic/alternative)
 header_visibility = "no"
@@ -35,8 +35,8 @@ message_delay_time= "1"
 
 # progress bar
 progressbar_look = "───"
-progressbar_color = "magenta"
-progressbar_elapsed_color = "white"
+progressbar_color = "white"
+progressbar_elapsed_color = "magenta"
 
 # colors
 colors_enabled = "yes"

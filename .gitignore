@@ -12,13 +12,14 @@
 /.config/scripts/folders.txt
 !/.config/fontconfig/
 !/.config/palettes/
+!/.config/.compton.conf
 
 !/.config/nvim/
 /.config/nvim/plugged
 
-!/.config/mpd/
-/.config/mpd/*
-!/.config/mpd/mpd.conf
+!/.config/mopidy/
+/.config/mopidy/*
+!/.config/mopidy/config
 
 !/.config/ncmpcpp/
 /.config/ncmpcpp/lyrics

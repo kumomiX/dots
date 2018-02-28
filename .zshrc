@@ -17,7 +17,7 @@ fi
 stty -ixon
 export ZBEEP='\eg'
 export LANG=en_US.UTF-8
-
+export PATH=$PATH":home/kumomi/.config/scripts/"
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -47,7 +47,8 @@ alias v="f -e $EDITOR" # quick opening files with vim
 alias o='a -e open_command' # quick opening files with xdg-open
 alias m='f -e mpv' # quick opening files with mplayer
 alias mk='mkdir'
-alias ra="d -e ranger"
+alias ra='d -e ranger'
+alias g='git'
 
 alias music="ncmpcpp"
 alias nv="$EDITOR"

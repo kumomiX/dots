@@ -9,19 +9,43 @@
 !URxvt*font:     xft:tewi:size=14
 !URxvt*boldFont: xft:tewi:bold:size=14
 !URxvt*font:     xft:Terminus:size=12
-!URxvt*boldFont: xft:Terminus:size=12
+!URxvt*boldFont: xft:Terminus:bold:size=12
 !URxvt*font:     xft:ProFont:size=13
 !URxvt*boldFont: xft:ProFont:size=13
-URxvt.font:     xft:scientifica:size=12
-!URxvt*boldFont: xft:Gohufont:pixelsize=14
+!URxvt*font:     xft:dina:size=14
+URxvt*font:      xft:GohuFont:size=14
+URxvt*boldFont:  xft:GohuFont:size=14
+!URxvt.font:     xft:lemon:size=13
 
-#include ".config/palettes/pepper.xresources"
+#include ".config/palettes/pepper.Xresources"
+
+*foreground:   base07
+*background:   base00
+*cursorColor:  base07
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
 
 !URxvt SETTINGS
 !URxvt*dynamicColors: on
 URxvt.internalBorder      : 34
 URxvt.geometry            : 70x35
-URxvt.thickness           : 5
+!URxvt.thickness           : 5
 URxvt*lineSpace: 2
 URxvt*scrollBar: false
 URxvt*saveLines: 1000
